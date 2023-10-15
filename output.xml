@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.3 on win32)" generated="20231015 12:03:35.080" rpa="false" schemaversion="4">
+<suite id="s1" name="SauceDemoTestAutomation" source="C:\Users\indresh\PycharmProjects\SauceDemoTestAutomation">
+<suite id="s1-s1" name="SauceDemoUI" source="C:\Users\indresh\PycharmProjects\SauceDemoTestAutomation\SauceDemoUI">
+<suite id="s1-s1-s1" name="SwagLab-Cart" source="C:\Users\indresh\PycharmProjects\SauceDemoTestAutomation\SauceDemoUI\SwagLab-Cart">
+<suite id="s1-s1-s1-s1" name="1. Cart" source="C:\Users\indresh\PycharmProjects\SauceDemoTestAutomation\SauceDemoUI\SwagLab-Cart\1. Cart.robot">
+<test id="s1-s1-s1-s1-t1" name="TC_001 Verify add to cart by adding single product to cart" line="25">
+<kw name="Login to SauceDemo" library="Library_SwagLab_Login" type="SETUP">
+<kw name="Login with User" library="Library_SwagLab_Login">
+<kw name="Open Swaglabs" library="Library_SwagLab_Login">
+<doc>Opens swaglabs in a browser</doc>
+<kw name="Launch Browser" library="Library_SwagLab_Login">
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${target_browser}'=='Chrome'</arg>
+<arg>Create Webdriver</arg>
+<arg>${target_browser}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>${target_browser}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20231015 12:03:35.592" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg timestamp="20231015 12:03:36.262" level="WARN">The chromedriver version (117.0.5938.88) detected in PATH at C:\Users\indresh\Documents\Driver\chromedriver.exe might not be compatible with the detected chrome version (118.0.5993.70); currently, chromedriver 118.0.5993.70 is recommended for chrome 118.*, so it is advised to delete the driver in PATH and retry</msg>
+<status status="PASS" starttime="20231015 12:03:35.591" endtime="20231015 12:03:37.934"/>
+</kw>
+<status status="PASS" starttime="20231015 12:03:35.591" endtime="20231015 12:03:37.934"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${target_browser}'=='Edge'</arg>
+<arg>Create Webdriver</arg>
+<arg>${target_browser}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20231015 12:03:37.934" endtime="20231015 12:03:37.935"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.body.style.zoom='100%'</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231015 12:03:37.938" level="INFO">Executing JavaScript:
+document.body.style.zoom='100%'
+Without any arguments.</msg>
+<status status="PASS" starttime="20231015 12:03:37.936" endtime="20231015 12:03:37.960"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${target_browser}'!='Parallel'</arg>
+<arg>Go To</arg>
+<arg>${QA-CORE_URL}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${QA-CORE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20231015 12:03:37.962" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<status status="PASS" starttime="20231015 12:03:37.961" endtime="20231015 12:03:38.637"/>
+</kw>
+<status status="PASS" starttime="20231015 12:03:37.960" endtime="20231015 12:03:38.637"/>
+</kw>
+<status status="PASS" starttime="20231015 12:03:35.591" endtime="20231015 12:03:38.638"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>${SeleniumSpeed}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20231015 12:03:38.638" endtime="20231015 12:03:38.639"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231015 12:03:38.639" endtime="20231015 12:03:38.975"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231015 12:03:43.976" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231015 12:03:38.975" endtime="20231015 12:03:43.976"/>
+</kw>
+<status status="PASS" starttime="20231015 12:03:35.590" endtime="20231015 12:03:43.976"/>
+</kw>
+<kw name="Login" library="Library_SwagLab_Login">
+<doc>keyword for performing login to Swag labs</doc>
+<kw name="Input Username for Login" library="Library_SwagLab_Login">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login_userName}</arg>
+<arg>${User1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231015 12:03:43.980" level="INFO">Typing text 'standard_user' into text field '//input[@id='user-name']'.</msg>
+<status status="PASS" starttime="20231015 12:03:43.978" endtime="20231015 12:03:44.901"/>
+</kw>
+<status status="PASS" starttime="20231015 12:03:43.977" endtime="20231015 12:03:44.901"/>
+</kw>
+<kw name="Input Password for Login" library="Library_SwagLab_Login">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231015 12:03:44.905" level="INFO">Typing text 'secret_sauce' into text field '//input[@id='password']'.</msg>
+<status status="PASS" starttime="20231015 12:03:44.903" endtime="20231015 12:03:45.783"/>
+</kw>
+<status status="PASS" starttime="20231015 12:03:44.901" endtime="20231015 12:03:45.783"/>
+</kw>
+<kw name="Submit Credentials" library="Library_SwagLab_Login">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${login_loginButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231015 12:03:45.788" level="INFO">Clicking element '//input[@id='login-button']'.</msg>
+<status status="PASS" starttime="20231015 12:03:45.786" endtime="20231015 12:03:46.456"/>
+</kw>
+<status status="PASS" starttime="20231015 12:03:45.784" endtime="20231015 12:03:46.456"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Swag Labs</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231015 12:03:46.899" level="INFO">Current page contains text 'Swag Labs'.</msg>
+<status status="PASS" starttime="20231015 12:03:46.456" endtime="20231015 12:03:46.899"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231015 12:03:56.900" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20231015 12:03:46.899" endtime="20231015 12:03:56.900"/>
+</kw>
+<status status="PASS" starttime="20231015 12:03:43.977" endtime="20231015 12:03:56.901"/>
+</kw>
+<status status="PASS" starttime="20231015 12:03:35.590" endtime="20231015 12:03:56.901"/>
+</kw>
+<status status="PASS" starttime="20231015 12:03:35.589" endtime="20231015 12:03:56.901"/>
+</kw>
+<kw name="Select product and click on add to cart">
+<arg>${productName}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_product1}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231015 12:03:56.903" level="INFO">Clicking element '//div[text()='Sauce Labs Onesie']/parent::a/parent::div/following-sibling::div/button[text()='Add to cart']'.</msg>
+<status status="PASS" starttime="20231015 12:03:56.902" endtime="20231015 12:03:57.407"/>
+</kw>
+<status status="PASS" starttime="20231015 12:03:56.902" endtime="20231015 12:03:57.407"/>
+</kw>
+<kw name="Go to cart section">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_CartIcon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231015 12:03:57.409" level="INFO">Clicking element '//a[@class='shopping_cart_link']'.</msg>
+<status status="PASS" starttime="20231015 12:03:57.408" endtime="20231015 12:03:57.914"/>
+</kw>
+<status status="PASS" starttime="20231015 12:03:57.407" endtime="20231015 12:03:57.914"/>
+</kw>
+<kw name="Verify Same product is added to cart">
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>@{cartList}</var>
+<arg>${Cart_cartItems}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20231015 12:03:58.138" level="INFO">@{cartList} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="3a7e646b28f6377fb2a1e86a86e36439", element="F9461C2FE44A86E99C02E701D2F40984_element_48")&gt; ]</msg>
+<status status="PASS" starttime="20231015 12:03:57.915" endtime="20231015 12:03:58.138"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>@{cartItemsName}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20231015 12:03:58.141" level="INFO">@{cartItemsName} = [ ]</msg>
+<status status="PASS" starttime="20231015 12:03:58.140" endtime="20231015 12:03:58.141"/>
+</kw>
+<for flavor="IN">
+<var>${item}</var>
+<value>@{cartList}</value>
+<iter>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="3a7e646b28f6377fb2a1e86a86e36439", element="F9461C2FE44A86E99C02E701D2F40984_element_48")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${item}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231015 12:03:58.391" level="INFO">${text} = Sauce Labs Onesie</msg>
+<status status="PASS" starttime="20231015 12:03:58.143" endtime="20231015 12:03:58.391"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${cartItemsName}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231015 12:03:58.391" endtime="20231015 12:03:58.392"/>
+</kw>
+<status status="PASS" starttime="20231015 12:03:58.142" endtime="20231015 12:03:58.392"/>
+</iter>
+<status status="PASS" starttime="20231015 12:03:58.141" endtime="20231015 12:03:58.392"/>
+</for>
+<kw name="List Should Contain Value" library="Collections">
+<arg>${cartItemsName}</arg>
+<arg>${productName}</arg>
+<doc>Fails if the ``value`` is not found from ``list``.</doc>
+<status status="PASS" starttime="20231015 12:03:58.392" endtime="20231015 12:03:58.393"/>
+</kw>
+<status status="PASS" starttime="20231015 12:03:57.915" endtime="20231015 12:03:58.393"/>
+</kw>
+<kw name="Logout from SauceDemo" library="Library_SwagLab_Login" type="TEARDOWN">
+<kw name="Logout and close browser" library="Library_SwagLab_Login">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_OpenMenu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231015 12:03:58.396" level="INFO">Clicking element '//button[text()='Open Menu']'.</msg>
+<status status="PASS" starttime="20231015 12:03:58.395" endtime="20231015 12:03:58.877"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${Home_LogOut}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20231015 12:03:58.878" level="INFO">Simulating Mouse Over on element '//a[text()='Logout']'.</msg>
+<status status="PASS" starttime="20231015 12:03:58.877" endtime="20231015 12:03:59.599"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Click Element</arg>
+<arg>${Home_LogOut}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_LogOut}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231015 12:03:59.600" level="INFO">Clicking element '//a[text()='Logout']'.</msg>
+<status status="PASS" starttime="20231015 12:03:59.599" endtime="20231015 12:04:00.082"/>
+</kw>
+<status status="PASS" starttime="20231015 12:03:59.599" endtime="20231015 12:04:00.082"/>
+</kw>
+<status status="PASS" starttime="20231015 12:03:58.395" endtime="20231015 12:04:00.082"/>
+</kw>
+<status status="PASS" starttime="20231015 12:03:58.394" endtime="20231015 12:04:00.082"/>
+</kw>
+<status status="PASS" starttime="20231015 12:03:35.588" endtime="20231015 12:04:00.083"/>
+</test>
+<test id="s1-s1-s1-s1-t2" name="TC_002 Verify add to cart by removing single product from cart" line="31">
+<kw name="Login to SauceDemo" library="Library_SwagLab_Login" type="SETUP">
+<kw name="Login with User" library="Library_SwagLab_Login">
+<kw name="Open Swaglabs" library="Library_SwagLab_Login">
+<doc>Opens swaglabs in a browser</doc>
+<kw name="Launch Browser" library="Library_SwagLab_Login">
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${target_browser}'=='Chrome'</arg>
+<arg>Create Webdriver</arg>
+<arg>${target_browser}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>${target_browser}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20231015 12:04:00.090" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<msg timestamp="20231015 12:04:00.884" level="WARN">The chromedriver version (117.0.5938.88) detected in PATH at C:\Users\indresh\Documents\Driver\chromedriver.exe might not be compatible with the detected chrome version (118.0.5993.70); currently, chromedriver 118.0.5993.70 is recommended for chrome 118.*, so it is advised to delete the driver in PATH and retry</msg>
+<status status="PASS" starttime="20231015 12:04:00.090" endtime="20231015 12:04:02.454"/>
+</kw>
+<status status="PASS" starttime="20231015 12:04:00.089" endtime="20231015 12:04:02.454"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${target_browser}'=='Edge'</arg>
+<arg>Create Webdriver</arg>
+<arg>${target_browser}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20231015 12:04:02.455" endtime="20231015 12:04:02.456"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>document.body.style.zoom='100%'</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20231015 12:04:02.459" level="INFO">Executing JavaScript:
+document.body.style.zoom='100%'
+Without any arguments.</msg>
+<status status="PASS" starttime="20231015 12:04:02.456" endtime="20231015 12:04:02.477"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${target_browser}'!='Parallel'</arg>
+<arg>Go To</arg>
+<arg>${QA-CORE_URL}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${QA-CORE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20231015 12:04:02.479" level="INFO">Opening url 'https://www.saucedemo.com/'</msg>
+<status status="PASS" starttime="20231015 12:04:02.478" endtime="20231015 12:04:03.226"/>
+</kw>
+<status status="PASS" starttime="20231015 12:04:02.477" endtime="20231015 12:04:03.227"/>
+</kw>
+<status status="PASS" starttime="20231015 12:04:00.089" endtime="20231015 12:04:03.227"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>${SeleniumSpeed}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20231015 12:04:03.227" endtime="20231015 12:04:03.228"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20231015 12:04:03.228" endtime="20231015 12:04:03.565"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231015 12:04:08.568" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20231015 12:04:03.567" endtime="20231015 12:04:08.568"/>
+</kw>
+<status status="PASS" starttime="20231015 12:04:00.088" endtime="20231015 12:04:08.568"/>
+</kw>
+<kw name="Login" library="Library_SwagLab_Login">
+<doc>keyword for performing login to Swag labs</doc>
+<kw name="Input Username for Login" library="Library_SwagLab_Login">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login_userName}</arg>
+<arg>${User1}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231015 12:04:08.570" level="INFO">Typing text 'standard_user' into text field '//input[@id='user-name']'.</msg>
+<status status="PASS" starttime="20231015 12:04:08.569" endtime="20231015 12:04:09.439"/>
+</kw>
+<status status="PASS" starttime="20231015 12:04:08.568" endtime="20231015 12:04:09.439"/>
+</kw>
+<kw name="Input Password for Login" library="Library_SwagLab_Login">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${login_password}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231015 12:04:09.442" level="INFO">Typing text 'secret_sauce' into text field '//input[@id='password']'.</msg>
+<status status="PASS" starttime="20231015 12:04:09.440" endtime="20231015 12:04:10.315"/>
+</kw>
+<status status="PASS" starttime="20231015 12:04:09.439" endtime="20231015 12:04:10.315"/>
+</kw>
+<kw name="Submit Credentials" library="Library_SwagLab_Login">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${login_loginButton}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231015 12:04:10.318" level="INFO">Clicking element '//input[@id='login-button']'.</msg>
+<status status="PASS" starttime="20231015 12:04:10.316" endtime="20231015 12:04:11.038"/>
+</kw>
+<status status="PASS" starttime="20231015 12:04:10.315" endtime="20231015 12:04:11.038"/>
+</kw>
+<kw name="Page Should Contain" library="SeleniumLibrary">
+<arg>Swag Labs</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<msg timestamp="20231015 12:04:11.487" level="INFO">Current page contains text 'Swag Labs'.</msg>
+<status status="PASS" starttime="20231015 12:04:11.038" endtime="20231015 12:04:11.487"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20231015 12:04:21.489" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20231015 12:04:11.488" endtime="20231015 12:04:21.489"/>
+</kw>
+<status status="PASS" starttime="20231015 12:04:08.568" endtime="20231015 12:04:21.489"/>
+</kw>
+<status status="PASS" starttime="20231015 12:04:00.088" endtime="20231015 12:04:21.489"/>
+</kw>
+<status status="PASS" starttime="20231015 12:04:00.088" endtime="20231015 12:04:21.490"/>
+</kw>
+<kw name="Select product and click on add to cart">
+<arg>${productName}</arg>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_product1}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231015 12:04:21.493" level="INFO">Clicking element '//div[text()='Sauce Labs Onesie']/parent::a/parent::div/following-sibling::div/button[text()='Add to cart']'.</msg>
+<status status="PASS" starttime="20231015 12:04:21.491" endtime="20231015 12:04:22.005"/>
+</kw>
+<status status="PASS" starttime="20231015 12:04:21.490" endtime="20231015 12:04:22.005"/>
+</kw>
+<kw name="Go to cart section">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_CartIcon}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231015 12:04:22.006" level="INFO">Clicking element '//a[@class='shopping_cart_link']'.</msg>
+<status status="PASS" starttime="20231015 12:04:22.006" endtime="20231015 12:04:22.557"/>
+</kw>
+<status status="PASS" starttime="20231015 12:04:22.005" endtime="20231015 12:04:22.557"/>
+</kw>
+<kw name="Verify Same product is added to cart">
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>@{cartList}</var>
+<arg>${Cart_cartItems}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20231015 12:04:22.778" level="INFO">@{cartList} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="6fb6c2b28a823c5f9143056472ff296d", element="08AFA3B3E560E75D6DB8BF6C9948AC81_element_48")&gt; ]</msg>
+<status status="PASS" starttime="20231015 12:04:22.558" endtime="20231015 12:04:22.778"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>@{cartItemsName}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20231015 12:04:22.778" level="INFO">@{cartItemsName} = [ ]</msg>
+<status status="PASS" starttime="20231015 12:04:22.778" endtime="20231015 12:04:22.778"/>
+</kw>
+<for flavor="IN">
+<var>${item}</var>
+<value>@{cartList}</value>
+<iter>
+<var name="${item}">&lt;selenium.webdriver.remote.webelement.WebElement (session="6fb6c2b28a823c5f9143056472ff296d", element="08AFA3B3E560E75D6DB8BF6C9948AC81_element_48")&gt;</var>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${item}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231015 12:04:23.004" level="INFO">${text} = Sauce Labs Onesie</msg>
+<status status="PASS" starttime="20231015 12:04:22.779" endtime="20231015 12:04:23.004"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${cartItemsName}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" starttime="20231015 12:04:23.004" endtime="20231015 12:04:23.004"/>
+</kw>
+<status status="PASS" starttime="20231015 12:04:22.779" endtime="20231015 12:04:23.004"/>
+</iter>
+<status status="PASS" starttime="20231015 12:04:22.778" endtime="20231015 12:04:23.004"/>
+</for>
+<kw name="List Should Contain Value" library="Collections">
+<arg>${cartItemsName}</arg>
+<arg>${productName}</arg>
+<doc>Fails if the ``value`` is not found from ``list``.</doc>
+<status status="PASS" starttime="20231015 12:04:23.005" endtime="20231015 12:04:23.005"/>
+</kw>
+<status status="PASS" starttime="20231015 12:04:22.557" endtime="20231015 12:04:23.005"/>
+</kw>
+<kw name="Remove Product from cart">
+<try>
+<branch type="TRY">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Cart_product_remove}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231015 12:04:23.006" level="INFO">Clicking element '//div[text()='Sauce Labs Onesie']/parent::a/parent::div/div/button[text()='Remove']'.</msg>
+<status status="PASS" starttime="20231015 12:04:23.006" endtime="20231015 12:04:23.475"/>
+</kw>
+<status status="PASS" starttime="20231015 12:04:23.006" endtime="20231015 12:04:23.475"/>
+</branch>
+<branch type="EXCEPT">
+<kw name="Log" library="BuiltIn">
+<arg>Product not found</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20231015 12:04:23.475" endtime="20231015 12:04:23.476"/>
+</kw>
+<status status="NOT RUN" starttime="20231015 12:04:23.475" endtime="20231015 12:04:23.476"/>
+</branch>
+<status status="PASS" starttime="20231015 12:04:23.006" endtime="20231015 12:04:23.476"/>
+</try>
+<status status="PASS" starttime="20231015 12:04:23.005" endtime="20231015 12:04:23.476"/>
+</kw>
+<kw name="Verify product is removed from cart">
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>@{cartList}</var>
+<arg>${Cart_cartItems}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20231015 12:04:23.705" level="INFO">@{cartList} = [ ]</msg>
+<status status="PASS" starttime="20231015 12:04:23.478" endtime="20231015 12:04:23.705"/>
+</kw>
+<kw name="Create List" library="BuiltIn">
+<var>@{cartItemsName}</var>
+<doc>Returns a list containing given items.</doc>
+<msg timestamp="20231015 12:04:23.706" level="INFO">@{cartItemsName} = [ ]</msg>
+<status status="PASS" starttime="20231015 12:04:23.705" endtime="20231015 12:04:23.706"/>
+</kw>
+<for flavor="IN">
+<var>${item}</var>
+<value>@{cartList}</value>
+<iter>
+<var name="${item}"/>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${text}</var>
+<arg>${item}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" starttime="20231015 12:04:23.707" endtime="20231015 12:04:23.707"/>
+</kw>
+<kw name="Append To List" library="Collections">
+<arg>${cartItemsName}</arg>
+<arg>${text}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" starttime="20231015 12:04:23.708" endtime="20231015 12:04:23.708"/>
+</kw>
+<status status="NOT RUN" starttime="20231015 12:04:23.707" endtime="20231015 12:04:23.709"/>
+</iter>
+<status status="NOT RUN" starttime="20231015 12:04:23.706" endtime="20231015 12:04:23.709"/>
+</for>
+<kw name="List Should Not Contain Value" library="Collections">
+<arg>${cartItemsName}</arg>
+<arg>${productName}</arg>
+<doc>Fails if the ``value`` is found from ``list``.</doc>
+<status status="PASS" starttime="20231015 12:04:23.709" endtime="20231015 12:04:23.710"/>
+</kw>
+<status status="PASS" starttime="20231015 12:04:23.477" endtime="20231015 12:04:23.710"/>
+</kw>
+<kw name="Logout from SauceDemo" library="Library_SwagLab_Login" type="TEARDOWN">
+<kw name="Logout and close browser" library="Library_SwagLab_Login">
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_OpenMenu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231015 12:04:23.714" level="INFO">Clicking element '//button[text()='Open Menu']'.</msg>
+<status status="PASS" starttime="20231015 12:04:23.713" endtime="20231015 12:04:24.223"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${Home_LogOut}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20231015 12:04:24.226" level="INFO">Simulating Mouse Over on element '//a[text()='Logout']'.</msg>
+<status status="PASS" starttime="20231015 12:04:24.223" endtime="20231015 12:04:24.971"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" library="BuiltIn">
+<arg>Click Element</arg>
+<arg>${Home_LogOut}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${Home_LogOut}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20231015 12:04:24.974" level="INFO">Clicking element '//a[text()='Logout']'.</msg>
+<status status="PASS" starttime="20231015 12:04:24.972" endtime="20231015 12:04:25.501"/>
+</kw>
+<status status="PASS" starttime="20231015 12:04:24.971" endtime="20231015 12:04:25.501"/>
+</kw>
+<status status="PASS" starttime="20231015 12:04:23.712" endtime="20231015 12:04:25.501"/>
+</kw>
+<status status="PASS" starttime="20231015 12:04:23.712" endtime="20231015 12:04:25.501"/>
+</kw>
+<status status="PASS" starttime="20231015 12:04:00.086" endtime="20231015 12:04:25.503"/>
+</test>
+<doc>This file contains testcase related to Cart</doc>
+<status status="PASS" starttime="20231015 12:03:35.130" endtime="20231015 12:04:25.507"/>
+</suite>
+<status status="PASS" starttime="20231015 12:03:35.127" endtime="20231015 12:04:25.517"/>
+</suite>
+<status status="PASS" starttime="20231015 12:03:35.123" endtime="20231015 12:04:25.524"/>
+</suite>
+<status status="PASS" starttime="20231015 12:03:35.084" endtime="20231015 12:04:25.532"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="SauceDemoTestAutomation">SauceDemoTestAutomation</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="SauceDemoUI">SauceDemoTestAutomation.SauceDemoUI</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1-s1" name="SwagLab-Cart">SauceDemoTestAutomation.SauceDemoUI.SwagLab-Cart</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1-s1-s1" name="1. Cart">SauceDemoTestAutomation.SauceDemoUI.SwagLab-Cart.1. Cart</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20231015 12:03:36.262" level="WARN">The chromedriver version (117.0.5938.88) detected in PATH at C:\Users\indresh\Documents\Driver\chromedriver.exe might not be compatible with the detected chrome version (118.0.5993.70); currently, chromedriver 118.0.5993.70 is recommended for chrome 118.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg timestamp="20231015 12:04:00.884" level="WARN">The chromedriver version (117.0.5938.88) detected in PATH at C:\Users\indresh\Documents\Driver\chromedriver.exe might not be compatible with the detected chrome version (118.0.5993.70); currently, chromedriver 118.0.5993.70 is recommended for chrome 118.*, so it is advised to delete the driver in PATH and retry</msg>
+</errors>
+</robot>
